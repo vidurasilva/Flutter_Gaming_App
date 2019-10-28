@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:pokedex/configs/AppColors.dart';
-import 'package:pokedex/models/generation.dart';
+import 'package:game_app/configs/AppColors.dart';
+import 'package:game_app/module/generation.dart';
 
 class GenerationCard extends StatelessWidget {
   const GenerationCard(this.generation, {Key key}) : super(key: key);

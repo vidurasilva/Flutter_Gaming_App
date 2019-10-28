@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pokedex/models/category.dart';
+import 'package:game_app/module/generation.dart';
 
 class PokeCategoryCard extends StatelessWidget {
   const PokeCategoryCard(
