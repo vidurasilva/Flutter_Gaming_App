@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/screens/pokemon_info/widgets/info.dart';
-import 'package:pokedex/screens/pokemon_info/widgets/tab.dart';
-import 'package:pokedex/widgets/slide_up_panel.dart';
+import 'package:game_app/widgets/slide_up_panel.dart';
+import 'package:game_app/Screens/pokemon_info/widgets/info.dart';
+import 'package:game_app/screens/pokemon_info/widgets/tab.dart';
+import 'package:game_app/widgets/slide_up_panel.dart';
 import 'package:provider/provider.dart';
 
 class PokemonInfo extends StatefulWidget {
