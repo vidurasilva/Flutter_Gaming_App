@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/Screen/home/widgets/category_list.dart';
+import 'package:game_app/Screen/home/widgets/news_list.dart';
+import 'package:game_app/Screen/home/widgets/search_bar.dart';
+import 'package:game_app/configs/AppColors.dart';
+import 'package:game_app/widgets/poke_container.dart';
 
 class Home extends StatefulWidget {
   static const cardHeightFraction = 0.65;
