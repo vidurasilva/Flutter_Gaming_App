@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/widgets/slide_up_panel.dart';
-import 'package:game_app/Screens/pokemon_info/widgets/info.dart';
-import 'package:game_app/screens/pokemon_info/widgets/tab.dart';
 import 'package:game_app/widgets/slide_up_panel.dart';
 import 'package:provider/provider.dart';
+
+import 'listenableProvider.dart';
 
 class PokemonInfo extends StatefulWidget {
   @override
@@ -52,32 +52,34 @@ class _PokemonInfoState extends State<PokemonInfo> with TickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return ListenableProvider(
-      builder: (context) => _cardController,
-      child: Scaffold(
-        backgroundColor: Color(0xFF48D0B0),
-        body: Stack(
-          children: <Widget>[
-            AnimatedBuilder(
-              animation: _cardHeightController,
-              child: PokemonTabInfo(),
-              builder: (context, child) {
-                return SlidingUpPanel(
-                  controller: _cardController,
-                  minHeight: _cardMinHeight * _cardHeightController.value,
-                  maxHeight: _cardMaxHeight,
-                  child: child,
-                );
-              },
+          builder: (context) => _cardController,
+          child: Scaffold(
+            backgroundColor: Color(0xFF48D0B0),
+            body: Stack(
+              children: <Widget>[
+                AnimatedBuilder(
+                  animation: _cardHeightController,
+                  child: PokemonTabInfo(),
+                  builder: (context, child) {
+                    return SlidingUpPanel(
+                      controller: _cardController,
+                      minHeight: _cardMinHeight * _cardHeightController.value,
+                      maxHeight: _cardMaxHeight,
+                      child: child,
+                    );
+                  },
+                ),
+                IntrinsicHeight(
+                  child: Container(
+                    key: _pokemonInfoKey,
+                    child: PokemonOverallInfo(),
+                  ),
+                )
+              ],
             ),
-            IntrinsicHeight(
-              child: Container(
-                key: _pokemonInfoKey,
-                child: PokemonOverallInfo(),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
+          ),
+        );
+      }
+    }
+    
+
